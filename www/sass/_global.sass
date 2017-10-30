@@ -1,0 +1,138 @@
+$main:              #8ae6cf
+$main_l:            #c0f1e5
+$main_d:            #61a292
+$accent:            #8ae6cf
+
+$placeholder_color: #9E9E9E
+
+$button_height:     5.7rem
+$button_radius:     50%
+
+$h1_font: 2.4rem
+$h2_font: 2.2rem
+$h3_font: 2rem
+$h4_font: 1.8rem
+
+@mixin body_presets
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  overflow-x: hidden
+
+@mixin button_presets
+  display: inline-block
+  text-align: center
+  white-space: nowrap
+  cursor: pointer
+  text-decoration: none
+  height: $button_height
+  line-height: $button_height
+  border-radius: $button_radius
+
+  &:focus
+    outline: 0
+
+@mixin input_presets
+  box-shadow: none
+  display: block
+  width: 100%
+  height: $button_height
+  border-radius: $button_radius
+
+  &:focus
+    outline: 0
+
+body
+  @include body_presets
+  line-height: 1.4
+  font-size: 1.6em
+  font-family: 'Open Sans', sans-serif
+  color: #282828
+
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4
+  margin-top: 0
+  font-weight: 300
+  display: block
+  line-height: 1.4
+
+
+h1, .h1
+  font-size: $h1_font
+h2, .h2
+  font-size: $h2_font
+h3, .h3
+  font-size: $h3_font
+h4, .h4
+  font-size: $h4_font
+
+a
+  text-decoration: none
+  color: inherit
+  transition: all .3s
+
+  &:hover
+    color: $main
+
+
+.button
+  @include button_presets
+  padding: 0 4.8rem
+  border: 0
+  background-color: $main
+  color: #fff
+  transition: all .3s
+
+  &:hover
+    background-color: $main_l
+    color: #fff
+
+  &.outlined
+    border: 1px solid $main
+    background-color: transparent
+    color: $main
+
+    &:hover
+      background-color: $main
+      color: #fff
+
+  &.flat
+    font-weight: bold
+    background-color: transparent
+    color: $main
+
+    &:hover
+      background-color: rgba($main, .4)
+
+.input
+  @include input_presets
+  margin-bottom: 1.2rem
+  padding: 0 ($button_height / 4)
+  border: 1px solid #EAE9E9
+  background-color: #F3F3F3
+  transition: border .4s
+
+  &:focus
+    border: 1px solid #ccc
+
+textarea.input
+  min-height: 9rem
+
+select.input
+  padding: 0 ($button_height / 4 - 0.4)
+
+.validate_error
+  border: 1px solid red !important
+
+::selection
+  background: lighten($accent, 10%)
+  color: #fff
+
+::placeholder
+  color: $placeholder_color
+  transition: all .3s
+
+.input:focus::placeholder
+  opacity: 0
+
+.placeholder
+  color: $placeholder_color

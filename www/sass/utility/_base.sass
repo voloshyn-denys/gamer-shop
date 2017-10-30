@@ -1,0 +1,42 @@
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
+
+ul, ol
+  list-style-position: inside
+
+img
+  max-width: 100%
+
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea
+  appearance: none
+
+[class^="icon_"], [class*=" icon_"], .icon
+  display: inline-block
+  width: 1em
+  height: 1em
+  fill: currentColor
+
+[disabled], .disabled
+  opacity: 0.5
+  cursor: not-allowed
+  pointer-events: none
+
+.noselect
+  user-select: none
+
+.overflowed
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  display: inline-block

@@ -1,0 +1,10 @@
+$md_desktop: 934px
+$md_tablet: 717px
+
+@mixin md_desktop
+	@media (min-width : $md_desktop)
+		@content
+
+@mixin md_tablet
+	@media (min-width : $md_tablet)
+		@content

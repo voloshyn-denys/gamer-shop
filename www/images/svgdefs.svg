@@ -1,0 +1,10 @@
+<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+
+	<symbol id="icon_close" viewBox="0 0 1024 1024">
+		<title>close</title>
+		<path class="path1" d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
+	</symbol>
+
+</defs>
+</svg>
