@@ -43,6 +43,15 @@ $h4_font: 1.8rem
   &:focus
     outline: 0
 
+@mixin clearfix
+  &:before,
+  &:after
+    content: ""
+    display: table
+
+  &:after
+    clear: both
+
 body
   @include body_presets
   line-height: 1.4
