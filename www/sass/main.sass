@@ -14,11 +14,10 @@
 html
  font-size: 62.5%
 
-
 .container
  width: 100%
  max-width: 402px
- padding: 0  3.6rem
+ padding: 2rem 0
  margin: 0 auto
  position: relative
 
@@ -31,8 +30,185 @@ html
   max-width: 717px
 
  +md_desktop
-  padding: 0 5rem
+  padding: 2rem 5rem
   max-width: 934px
 
 h1
  font-family: 'Oswald', sans-serif
+
+
+ // PRODUCT PAGE
+
+.product_order
+
+ &_title
+  text-transform: uppercase
+  font-size: 2.4rem
+  font-weight: 800
+  margin-bottom: 2.5rem
+  padding: 0 2.5rem
+
+  +md_tablet
+   padding: 0
+
+  +md_desktop
+   float: right
+   width: 48%
+   margin-bottom: 0
+
+ &_meta
+  display: block
+  margin: 1rem 0
+  font-size: 1.1rem
+  color: #686b74
+
+  +md_desktop
+   font-size: 1.2rem
+
+ &_price
+  font-weight: 600
+  font-size: 3.6rem
+
+  &--new
+   .current-price
+    text-decoration: line-through
+    margin-right: 1rem
+
+   .new-price
+    color: #ce2c52
+
+  +md_desktop
+   font-size: 2.4rem
+
+ &_photo
+
+  .photo-loader
+    position: relative
+    width: 100%
+    background: url(../images/no-image.png) center center #eaf2f4 no-repeat
+
+    img
+     position: absolute
+     top: 0
+     right: 0
+     left: 0
+     bottom: 0
+     margin: auto
+
+    &:after
+     content: ''
+     display: block
+     padding-top: 100%
+
+
+  +md_tablet
+   width: 48%
+   float: left
+   margin-right: 4%
+
+ &_info
+  padding: 0 3.5rem
+
+  +md_tablet
+   padding: 0
+   width: 48%
+   float: left
+
+  .rating
+   margin: 1rem 0
+
+ &_details
+  margin-bottom: 2.5rem
+
+  .details_label
+   font-weight: 800
+   margin-bottom: 0.5rem
+   font-size: 1.4rem
+   display: none
+   
+   +md_tablet
+    display: block
+    
+   +md_desktop
+    display: none
+
+  .details_text
+   margin: 0
+   font-size: 1.4rem
+
+   +md_tablet
+    font-size: 1.2rem
+
+ &_size
+  text-align: center
+  
+  +md_tablet
+   text-align: left
+
+  .hide
+   +md_desktop
+    display: none
+
+  &_title
+   margin-bottom: 1.5rem
+   font-weight: 800
+   font-size: 2rem
+
+   +md_tablet
+    font-size: 1.4rem
+
+   +md_desktop
+    float: left
+    margin-bottom: 0
+    padding: 1.1rem 1.5rem 0 0
+
+  &_btn
+   text-transform: uppercase
+   font-size: 1.2rem
+   width: 4rem
+   height: 4rem
+   background-color: #fff
+   display: inline-block
+   border-radius: 50%
+   border: 1px solid #2c303d
+   font-weight: 800
+   padding: 1.1rem
+   cursor: pointer
+   text-align: center
+
+  &_list
+   margin: 0 0 3rem
+   padding: 0
+
+   input[type='radio']
+    display: none
+
+    &:checked + .product_order_size_btn
+     background-color: #2c303d
+     color: #fff
+
+   .item
+    display: inline-block
+
+    &:not(:last-child)
+     margin-right: 2.5rem
+
+     +md_tablet
+      margin-right: 1.5rem
+
+     +md_desktop
+      margin-right: 1rem
+
+.rating
+ margin: 0
+ padding: 0
+ vertical-align: text-bottom
+ list-style: none
+ width: 9.5rem
+ height: 2rem
+ background: url(../images/star.png) repeat-x
+
+ .scale
+  display: block
+  height: 2rem
+  background: url(../images/star-active.png) repeat-x

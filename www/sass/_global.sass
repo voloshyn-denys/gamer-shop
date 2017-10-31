@@ -2,11 +2,13 @@ $main:              #8ae6cf
 $main_l:            #c0f1e5
 $main_d:            #61a292
 $accent:            #8ae6cf
+$text:              #282828
+$bgcolor:           #f6f6f6
 
 $placeholder_color: #9E9E9E
 
-$button_height:     5.7rem
-$button_radius:     50%
+$button_height:     5.5rem
+$button_radius:     5rem
 
 $h1_font: 2.4rem
 $h2_font: 2.2rem
@@ -46,7 +48,8 @@ body
   line-height: 1.4
   font-size: 1.6em
   font-family: 'Open Sans', sans-serif
-  color: #282828
+  color: $text
+  background-color: $bgcolor
 
 
 h1, h2, h3, h4, .h1, .h2, .h3, .h4
@@ -79,8 +82,16 @@ a
   padding: 0 4.8rem
   border: 0
   background-color: $main
-  color: #fff
+  color: #000
   transition: all .3s
+  max-width: 28rem
+  text-transform: uppercase
+  font-weight: 600
+  width: 100%
+
+  +md_tablet
+    height: 4.4rem
+    line-height: 4.4rem
 
   &:hover
     background-color: $main_l
