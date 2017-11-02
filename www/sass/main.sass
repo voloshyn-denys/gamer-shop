@@ -4,6 +4,7 @@
 @import 'utility/_flickity'
 
 // BASE
+@import '_icons'
 @import 'utility/_base'
 @import '_media'
 
@@ -11,6 +12,26 @@
 @import '_global'
 
 // MAIN
+
+[class^=icon-]
+    display: inline-block
+    vertical-align: middle
+
+.icon-fb
+    +sprite($fb)
+
+.icon-twitter
+    +sprite($tw)
+
+.icon-pinterest
+    +sprite($pint)
+
+.icon-youtube
+    +sprite($yt)
+
+.icon-instagram
+    +sprite($inst)
+
 
 html
  font-size: 62.5%
@@ -42,257 +63,426 @@ h1
  // PRODUCT PAGE
 
 .product_order
- margin-bottom: 4.5rem
- clear: fix
+    margin-bottom: 4.5rem
+    clear: fix
 
- &_title
-  text-transform: uppercase
-  font-size: 2.4rem
-  font-weight: 800
-  margin-bottom: 2.5rem
-  padding: 0 2.5rem
+    +md_tablet
+        position: relative
 
-  +md_tablet
-   padding: 0
+    .social
+        margin: 2rem 0
 
-  +md_desktop
-   float: right
-   width: 48%
-   margin-bottom: 0
+        &_btn
+            +md_desktop
+                font-size: 1.8rem
+                color: $socialColor
 
- &_meta
-  display: block
-  margin: 1rem 0
-  font-size: 1.1rem
-  color: #686b74
+        +md_tablet
+            width: 4rem
+            position: absolute
+            top: 4rem
+            left: 1.5rem
 
-  +md_desktop
-   font-size: 1.2rem
+            &_tooltip
 
- &_price
-  font-weight: 600
-  font-size: 3.6rem
+                .item:not(:last-child)
+                    margin-bottom: 1rem
 
-  &--new
-   .current-price
-    text-decoration: line-through
-    margin-right: 1rem
+                    +md_desktop
+                        margin-bottom: 0
 
-   .new-price
-    color: #ce2c52
+        +md_desktop
+            display: inline-block
+            width: initial
+            position: relative
+            top: 0
+            left: 0
+            margin: 0.8rem 2rem
 
-  +md_desktop
-   font-size: 2.4rem
+    &_title
+        text-transform: uppercase
+        font-size: 2.4rem
+        font-weight: 800
+        margin-bottom: 2.5rem
+        padding: 0 2.5rem
 
- &_photo
+        +md_tablet
+            padding: 0
 
-  .photo-loader
+        +md_desktop
+            float: right
+            width: 48%
+            margin-bottom: 0
+
+    &_meta
+        display: block
+        margin: 1rem 0
+        font-size: 1.1rem
+        color: #686b74
+
+        +md_desktop
+            font-size: 1.2rem
+
+    &_price
+        font-weight: 600
+        font-size: 3.6rem
+
+        &--new
+
+            .current-price
+                text-decoration: line-through
+                margin-right: 1rem
+
+            .new-price
+                color: #ce2c52
+
+        +md_desktop
+            font-size: 2.4rem
+
+    &_photo
+
+        .photo-loader
+              position: relative
+              width: 100%
+              background: url(../images/no-image.png) center center #eaf2f4 no-repeat
+
+              img
+                  position: absolute
+                  top: 0
+                  right: 0
+                  left: 0
+                  bottom: 0
+                  margin: auto
+
+              &:after
+                  content: ''
+                  display: block
+                  padding-top: 100%
+
+              +md_tablet
+                  width: 48%
+                  float: left
+                  margin-right: 4%
+
+    &_info
+        padding: 0 3.5rem
+
+        +md_tablet
+            padding: 0
+            width: 48%
+            float: left
+
+        +md_desktop
+            width: 38rem
+
+        .rating
+            margin: 1rem 0
+
+            +md_desktop
+                float: left
+
+    &_details
+        margin-bottom: 2.5rem
+
+        .details_label
+            font-weight: 800
+            margin-bottom: 0.5rem
+            font-size: 1.4rem
+            display: none
+
+            +md_tablet
+                display: block
+
+            +md_desktop
+                display: none
+
+        .details_text
+            margin: 0
+            font-size: 1.4rem
+
+            +md_tablet
+                font-size: 1.2rem
+
+    &_size
+        text-align: center
+
+        +md_tablet
+            text-align: left
+
+        .hide
+            +md_desktop
+                display: none
+
+        &_title
+            margin-bottom: 1.5rem
+            font-weight: 800
+            font-size: 2rem
+
+            +md_tablet
+                font-size: 1.4rem
+
+            +md_desktop
+                float: left
+                margin-bottom: 0
+                padding: 1.1rem 1.5rem 0 0
+
+        &_btn
+            text-transform: uppercase
+            font-size: 1.2rem
+            width: 4rem
+            height: 4rem
+            background-color: #fff
+            display: inline-block
+            border-radius: 50%
+            border: 1px solid #2c303d
+            font-weight: 800
+            padding: 1.1rem
+            cursor: pointer
+            text-align: center
+
+        &_list
+            margin: 0 0 3rem
+            padding: 0
+
+            input[type='radio']
+                display: none
+
+                &:checked + .product_order_size_btn
+                    background-color: #2c303d
+                    color: #fff
+
+            .item
+                display: inline-block
+
+                &:not(:last-child)
+                    margin-right: 2.5rem
+
+                    +md_tablet
+                        margin-right: 1.5rem
+
+                    +md_desktop
+                        margin-right: 1rem
+
+.product_also
+    clear: fix
+
+    .flickity-prev-next-button
+        background: none
+
+        svg
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+
+        &.next
+            right: 0
+
+        &.prev
+            left: 0
+
+    &_title
+        font-weight: 800
+        text-align: center
+        letter-spacing: 2.4px
+
+        +md_desktop
+            text-align: left
+
+    &_grid
+
+        &:after
+            content: 'flickity'
+            display: none
+
+            +md_tablet
+                content: ''
+
+        +md_tablet
+            clear: fix
+
+    &_item
+        position: relative
+        width: 30rem
+        margin-right: 3rem
+        margin-left: 3rem
+
+        &:hover
+            color: initial
+
+        +md_tablet
+            float: left
+            margin-bottom: 4rem
+            margin-right: 0
+            margin-left: 0
+
+            &:nth-child(odd)
+                margin-right: 4rem
+
+        +md_desktop
+            width: 26.4rem
+            margin-bottom: 2rem
+            margin-right: 2rem
+
+            &:nth-child(odd)
+                margin-right: 2rem
+
+            &:nth-child(3n)
+                margin-right: 0
+
+    &_prise
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 100%
+        text-align: center
+        background-color: rgba(138, 230, 207, 0.7)
+        height: 3rem
+        line-height: 3rem
+        font-weight: 800
+        font-size: 1.8rem
+
+        +md_tablet
+            font-size: 2.2rem
+
+        +md_desktop
+            bottom: 2rem
+            width: initial
+            height: 2.2rem
+            line-height: 2.2rem
+            padding: 0 0.5rem
+            background-color: #8ae6cf
+            font-size: 1.6rem
+
+        .prise_old
+            display: none
+            position: relative
+
+            &:before
+                position: absolute
+                top: 50%
+                right: -2px
+                height: 1px
+                width: 87%
+                content: ''
+                background-color: $text
+
+            +md_desktop
+                display: inline-block
+
+        .prise_current
+            color: #ce2c52
+            margin-left: 0.5rem
+
+.photo-loader
+    display: block
     position: relative
     width: 100%
     background: url(../images/no-image.png) center center #eaf2f4 no-repeat
 
     img
-     position: absolute
-     top: 0
-     right: 0
-     left: 0
-     bottom: 0
-     margin: auto
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        margin: auto
 
     &:after
-     content: ''
-     display: block
-     padding-top: 100%
-
-
-  +md_tablet
-   width: 48%
-   float: left
-   margin-right: 4%
-
- &_info
-  padding: 0 3.5rem
-
-  +md_tablet
-   padding: 0
-   width: 48%
-   float: left
-
-  .rating
-   margin: 1rem 0
-
- &_details
-  margin-bottom: 2.5rem
-
-  .details_label
-   font-weight: 800
-   margin-bottom: 0.5rem
-   font-size: 1.4rem
-   display: none
-   
-   +md_tablet
-    display: block
-    
-   +md_desktop
-    display: none
-
-  .details_text
-   margin: 0
-   font-size: 1.4rem
-
-   +md_tablet
-    font-size: 1.2rem
-
- &_size
-  text-align: center
-  
-  +md_tablet
-   text-align: left
-
-  .hide
-   +md_desktop
-    display: none
-
-  &_title
-   margin-bottom: 1.5rem
-   font-weight: 800
-   font-size: 2rem
-
-   +md_tablet
-    font-size: 1.4rem
-
-   +md_desktop
-    float: left
-    margin-bottom: 0
-    padding: 1.1rem 1.5rem 0 0
-
-  &_btn
-   text-transform: uppercase
-   font-size: 1.2rem
-   width: 4rem
-   height: 4rem
-   background-color: #fff
-   display: inline-block
-   border-radius: 50%
-   border: 1px solid #2c303d
-   font-weight: 800
-   padding: 1.1rem
-   cursor: pointer
-   text-align: center
-
-  &_list
-   margin: 0 0 3rem
-   padding: 0
-
-   input[type='radio']
-    display: none
-
-    &:checked + .product_order_size_btn
-     background-color: #2c303d
-     color: #fff
-
-   .item
-    display: inline-block
-
-    &:not(:last-child)
-     margin-right: 2.5rem
-
-     +md_tablet
-      margin-right: 1.5rem
-
-     +md_desktop
-      margin-right: 1rem
-
-.product_also
- clear: fix
-
- .flickity-prev-next-button
-  background: none
-
-  svg
-   left: 0
-   top: 0
-   width: 100%
-   height: 100%
-
-  &.next
-   right: 0
-
-  &.prev
-   left: 0
-
- &_title
-  font-weight: 600
-  text-align: center
-
-  +md_desktop
-   text-align: left
-
- &_grid
-
-  &:after
-   content: 'flickity'
-   display: none
-
-   +md_tablet
-    content: ''
-
-  +md_tablet
-   clear: fix
-
- &_item
-  width: 30rem
-  margin-right: 3rem
-  margin-left: 3rem
-
-  +md_tablet
-   float: left
-   margin-bottom: 4rem
-   margin-right: 0
-   margin-left: 0
-
-   &:nth-child(odd)
-    margin-right: 4rem
-
-  +md_desktop
-   width: 26.4rem
-   margin-bottom: 2rem
-   margin-right: 2rem
-
-   &:nth-child(odd)
-    margin-right: 2rem
-
-   &:nth-child(3n)
-    margin-right: 0
-
-.photo-loader
- position: relative
- width: 100%
- background: url(../images/no-image.png) center center #eaf2f4 no-repeat
-
- img
-  position: absolute
-  top: 0
-  right: 0
-  left: 0
-  bottom: 0
-  margin: auto
-
- &:after
-  content: ''
-  display: block
-  padding-top: 95%
+        content: ''
+        display: block
+        padding-top: 95%
 
 .rating
- margin: 0
- padding: 0
- vertical-align: text-bottom
- list-style: none
- width: 9.5rem
- height: 2rem
- background: url(../images/star.png) repeat-x
+    margin: 0
+    padding: 0
+    vertical-align: text-bottom
+    list-style: none
+    width: 10rem
+    height: 2rem
+    background: url(../images/star.png) repeat-x
 
- .scale
-  display: block
-  height: 2rem
-  background: url(../images/star-active.png) repeat-x
+    .scale
+        display: block
+        height: 2rem
+        background: url(../images/star-active.png) repeat-x
+
+
+.social
+
+    +md_desktop
+        position: relative
+        display: inline-block
+
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0 1rem
+        cursor: pointer
+        font-size: 2.8rem
+        font-weight: 800
+        color: $socialColor
+        transition: color linear 0.3s
+
+        &:hover
+            color: #ce2c52
+
+    .social_tooltip
+        +md_desktop
+            display: none
+            position: absolute
+            top: 100%
+            left: 0
+            padding: 1.3rem
+            background-color: #fff
+            width: 28rem
+            margin: 0.5rem 0 0 -9rem
+            box-shadow: 0 0 10px rgba(0,0,0, 0.4)
+
+            &.open
+                display: block
+                animation: fadeInDown 0.3s
+
+    &_list
+        padding: 0
+        margin: 0
+        list-style-type: none
+
+        .item
+            display: inline-block
+            width: 4rem
+            height: 4rem
+            border: 2px solid $socialColor
+            border-radius: 50%
+            padding: 0.5rem 0
+            text-align: center
+            transition: all 0.3s
+
+            &:hover
+                +md_desktop
+                    background-color: #f6f6f6
+
+            &:not(:last-child)
+                margin-right: 0.5rem
+
+                +md_tablet
+                    margin-bottom: 1rem
+
+                +md_tablet
+                    margin-bottom: 0
+
+    &_btn,
+    &_label,
+    .close
+        display: none
+
+        +md_desktop
+            display: inline
+
+    &_label
+        +md_desktop
+            color: $socialColor
+            font-weight: bold
+            margin-bottom: 10px
+            display: block

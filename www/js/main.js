@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    var $social_tooltip = $('.social_tooltip');
+
     $('.product_also_grid').flickity({
         watchCSS: true,
         arrowShape: {
@@ -9,4 +12,8 @@ $(document).ready(function(){
         },
         pageDots: false
     });
+
+    $('.social_btn, .close').on('click', function(){
+        $social_tooltip.toggleClass('open');
+    })
 });

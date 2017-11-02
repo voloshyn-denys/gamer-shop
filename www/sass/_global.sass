@@ -4,6 +4,7 @@ $main_d:            #61a292
 $accent:            #8ae6cf
 $text:              #282828
 $bgcolor:           #f6f6f6
+$socialColor:       #2c87ce
 
 $placeholder_color: #9E9E9E
 
@@ -52,6 +53,9 @@ $h4_font: 1.8rem
   &:after
     clear: both
 
+.clearfix
+  +clearfix
+
 body
   @include body_presets
   line-height: 1.4
@@ -88,8 +92,7 @@ a
 
 .button
   @include button_presets
-  padding: 0 4.8rem
-  border: 0
+  padding: 0 2.8rem
   background-color: $main
   color: #000
   transition: all .3s
@@ -97,14 +100,16 @@ a
   text-transform: uppercase
   font-weight: 600
   width: 100%
+  border: 2px solid $main
 
   +md_tablet
     height: 4.4rem
     line-height: 4.4rem
+    max-width: 22rem
 
   &:hover
-    background-color: $main_l
-    color: #fff
+    color: $main
+    background-color: transparent
 
   &.outlined
     border: 1px solid $main
